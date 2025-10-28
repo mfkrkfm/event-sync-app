@@ -17,34 +17,10 @@ EventSync is a full-stack application for creating events, submitting feedback, 
 ## Setup Instructions
 
 ### Backend
-1. Add your Hugging Face API key in `.env` in the backend folder:
+1. Add your Hugging Face API key in `.env` in the root folder:
 ```
 HUGGINGFACE_API_KEY=your_api_key_here
 ```
-2. Build and run backend:
-```bash
-cd event-sync
-mvn clean package
-java -jar target/event-sync-0.0.1-SNAPSHOT.jar
-```
-- Backend runs on: `http://localhost:8081`
-
-### Frontend
-1. Install dependencies:
-```bash
-cd event-sync-ui
-npm install
-```
-2. Run frontend in development mode:
-```bash
-npm start
-```
-- Frontend runs on: `http://localhost:3000`
-
----
-
-### Docker (Optional)
-1. Ensure `.env` contains Hugging Face API key.
 2. Build and start containers:
 ```bash
 docker-compose up --build
@@ -74,9 +50,3 @@ docker-compose up --build
 - `GET /events/{eventId}/summary` – Get sentiment summary for the event
 
 ---
-
-## Notes
-- API keys must be kept secure and should not be committed to version control.
-- Frontend communicates with backend via `REACT_APP_API_URL`.
-- Production deployment: Frontend can be served via Nginx container.
-- Unit and integration tests are included for both backend and frontend.
