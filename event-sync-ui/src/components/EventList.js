@@ -64,16 +64,26 @@ const EventList = ({ onSelect }) => {
         </thead>
         <tbody>
           {events.map((ev) => (
-            <tr
-              key={ev.id}
-              onClick={() => onSelect(ev.id)}
-              style={{ cursor: "pointer", border: "1px solid #ddd" }}
-            >
+            <tr key={ev.id} style={{ border: "1px solid #ddd" }}>
               <td style={{ border: "1px solid #ddd", padding: "8px" }}>
                 {ev.id}
               </td>
               <td style={{ border: "1px solid #ddd", padding: "8px" }}>
-                {ev.title}
+                <button
+                  onClick={() => onSelect(ev.id)}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    color: "blue",
+                    textDecoration: "underline",
+                    cursor: "pointer",
+                    padding: "0",
+                    fontSize: "inherit",
+                    fontFamily: "inherit",
+                  }}
+                >
+                  {ev.title}
+                </button>
               </td>
               <td style={{ border: "1px solid #ddd", padding: "8px" }}>
                 {ev.description}
